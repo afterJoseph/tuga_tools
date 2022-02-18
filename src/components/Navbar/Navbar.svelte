@@ -10,9 +10,13 @@
 		{
 			title: 'listas',
 			url: '/listas',
-			dropdownList: [{ title: 'Distritos Portugal', url: 'distritosPortugal' }]
+			dropdownList: [
+				{ title: 'Distritos_Portugal', url: 'distritosportugal' },
+				{ title: 'Concelhos_Portugal', url: 'concelhosportugal' }
+			]
 		},
-		{ title: 'funções', url: '/funcoes' }
+		{ title: 'funções', url: '/funcoes' },
+		{ title: 'tools', url: '/tools' }
 	];
 </script>
 

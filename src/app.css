@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+	.navbarLink {
+		@apply p-0 m-0 ml-4 text-2xl no-underline text-white border-b-4 border-transparent ease-in duration-150;
+	}
+}

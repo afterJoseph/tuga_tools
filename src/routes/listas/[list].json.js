@@ -1,6 +1,6 @@
-export async function get() {
+export async function get({ params }) {
 	try {
-		const distritosPortugal = [
+		const distritosPortugalSimple = [
 			'Aveiro',
 			'Beja',
 			'Braga',
@@ -180,23 +180,28 @@ export async function get() {
 			}
 		];
 
-		return {
-			status: 200,
-			body: {
-				listas: [
-					// {
-					// 	name: 'Concelhos de Portugal',
-					// 	data: concelhosPortugal
-					// },
+		const masterListas = [
+			{
+				name: 'distritosportugal',
+				data: [
 					{
 						name: 'Distritos de Portugal',
-						data: distritosPortugal
+						data: distritosPortugalSimple
 					},
 					{
 						name: 'Distritos de Portugal + Info Extra',
 						data: distritosPortugalDetails
 					}
 				]
+			}
+		];
+
+		const listas = masterListas.find((list) => list.name === params.list)?.data || [];
+
+		return {
+			status: 200,
+			body: {
+				listas
 			}
 		};
 	} catch (error) {
