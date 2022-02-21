@@ -11,8 +11,10 @@
 			title: 'listas',
 			url: '/listas',
 			dropdownList: [
+				{ title: 'Concelhos_Portugal', url: 'concelhosportugal' },
 				{ title: 'Distritos_Portugal', url: 'distritosportugal' },
-				{ title: 'Concelhos_Portugal', url: 'concelhosportugal' }
+				{ title: 'Freguesias_Portugal', url: 'freguesiasportugal' },
+				{ title: 'Distritos_Concelhos_Freguesias', url: 'distritosconcelhosfreguesias' }
 			]
 		},
 		{ title: 'funções', url: '/funcoes' },
