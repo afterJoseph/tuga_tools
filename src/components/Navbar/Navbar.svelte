@@ -5,7 +5,7 @@
 	import LinkComponent from './LinkComponent.svelte';
 	import LogoComponent from './LogoComponent.svelte';
 
-	const links = [
+	const links: { title: string; url: string; dropdownList?: { title: string; url: string }[] }[] = [
 		{ title: 'home', url: '/' },
 		{
 			title: 'listas',
@@ -17,7 +17,11 @@
 				{ title: 'Distritos_Concelhos_Freguesias', url: 'distritosconcelhosfreguesias' }
 			]
 		},
-		{ title: 'funções', url: '/funcoes' },
+		{
+			title: 'funções',
+			url: '/funcoes',
+			dropdownList: [{ title: 'Validar NIF', url: 'validarnif' }]
+		},
 		{ title: 'tools', url: '/tools' }
 	];
 </script>

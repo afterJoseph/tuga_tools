@@ -1,24 +1,8 @@
 <script lang="ts">
-	import IconCopy from '$icons/icon_copy.svelte';
+	import CodeBlock from './CodeBlock.svelte';
+	import CopyButton from './CopyButton.svelte';
 	export let row;
-	let codeValue = JSON.stringify(row.data, null, ' ');
-	let isCopied = false;
 	$: mode = row.type;
-
-	function handleCopyClipboard() {
-		navigator.clipboard.writeText(codeValue).then(
-			function () {
-				/* clipboard successfully set */
-				isCopied = true;
-				setTimeout(() => {
-					isCopied = false;
-				}, 3000);
-			},
-			function () {
-				/* clipboard write failed */
-			}
-		);
-	}
 
 	function toggleMode(newMode) {
 		mode = newMode;
@@ -47,17 +31,7 @@
 					on:click={() => toggleMode('json')}>JSON</button
 				>
 			</div>
-			<div class="flex justify-end items-start">
-				<p
-					class="mr-2 font-bold transition-all ease-in duration-150 p-0 m-0"
-					class:opacity-0={!isCopied}
-				>
-					COPIADO
-				</p>
-				<button class="btn mr-4" on:click={handleCopyClipboard}>
-					<IconCopy class="h-6 w-6" />
-				</button>
-			</div>
+			<CopyButton {row} />
 		</div>
 		{#if mode === 'list'}
 			<div
@@ -71,7 +45,7 @@
 			</div>
 		{:else if mode === 'json'}
 			<p class="p-4 text-lg break-all">
-				{JSON.stringify(row.data, null, ' ')}
+				<CodeBlock>{JSON.stringify(row.data, null, ' ')}</CodeBlock>
 			</p>
 		{/if}
 	</div>
