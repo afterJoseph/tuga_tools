@@ -7,7 +7,7 @@
 <div
 	class="__layout min-h-screen h-full flex justify-center text-slate-50 bg-purple-900 dark:bg-stone-800"
 >
-	<div class="main min-w-full px-4">
+	<div class="main flex flex-col min-w-full px-4">
 		<Navbar />
 		<slot />
 		<Footer />
