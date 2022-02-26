@@ -31,7 +31,7 @@
 					on:click={() => toggleMode('json')}>JSON</button
 				>
 			</div>
-			<CopyButton {row} />
+			<CopyButton data={row.data} />
 		</div>
 		{#if mode === 'list'}
 			<div

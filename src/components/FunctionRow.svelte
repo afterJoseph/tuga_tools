@@ -3,6 +3,7 @@
 	import CopyButton from './CopyButton.svelte';
 
 	export let row;
+	$: data = row.data.split('\n').join('').split('\t').join('');
 </script>
 
 <div class="py-4 px-0">
@@ -12,7 +13,7 @@
 	<div
 		class="flex flex-col bg-purple-50 dark:bg-stone-200 text-stone-700 p-4 border border-stone-700 border-dashed"
 	>
-		<CopyButton {row} />
+		<CopyButton {data} />
 		<p class="p-4 text-lg break-all">
 			<CodeBlock>{row?.data || ''}</CodeBlock>
 		</p>

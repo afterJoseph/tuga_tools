@@ -1,7 +1,7 @@
 <script lang="ts">
 	import IconCopy from '$icons/icon_copy.svelte';
-	export let row;
-	$: codeValue = JSON.stringify(row.data, null, ' ');
+	export let data;
+	$: codeValue = JSON.stringify(data, null, ' ');
 	let isCopied = false;
 
 	function handleCopyClipboard() {
