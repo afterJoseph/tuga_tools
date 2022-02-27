@@ -22,7 +22,11 @@
 			url: '/funcoes',
 			dropdownList: [{ title: 'Validar NIF', url: 'validarnif' }]
 		},
-		{ title: 'tools', url: '/tools' }
+		{
+			title: 'tools',
+			url: '/tools',
+			dropdownList: [{ title: 'Calculadora Horas', url: 'calculadoradiferencahoras' }]
+		}
 	];
 </script>
 
