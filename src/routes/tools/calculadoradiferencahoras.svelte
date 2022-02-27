@@ -59,7 +59,7 @@
 			<td
 				><button
 					on:click={clearAll}
-					class="p-2 text-xl bg-purple-900 border-2 border-dashed hover:bg-red-500"
+					class="p-2 text-xl bg-purple-900 border-2 border-dashed hover:bg-red-500 dark:hover:bg-red-400 dark:bg-stone-800"
 					>Limpar Tudo</button
 				></td
 			>
